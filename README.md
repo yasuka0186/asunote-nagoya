@@ -8,6 +8,7 @@
 
 - 現在の工程：Day 1（要件確定・プロジェクト準備）
 - 公開URL：未公開
+- GitHubリポジトリ：<https://github.com/yasuka0186/asunote-nagoya>
 - 制作期間：13工程
 
 ## 使用技術
@@ -54,4 +55,3 @@ npm run test:e2e
 ```
 
 詳細な要件と制作日程は [`docs/asunote-requirements-schedule.md`](docs/asunote-requirements-schedule.md) を参照してください。
-

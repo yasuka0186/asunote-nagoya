@@ -13,14 +13,20 @@
 - [x] 要件定義書を全文確認した
 - [x] ページ一覧とURLを確定した
 - [x] 対象外を確定した
-- [ ] 公開GitHubリポジトリを作成した
+- [x] 公開GitHubリポジトリを作成した
 - [x] ディレクトリ構成を作成した
-- [ ] GitHub Issuesへ13工程を登録した
+- [x] GitHub Issuesへ13工程を登録した
 - [x] 完了の定義を受入条件と一致させた
+
+## GitHub
+
+- 公開リポジトリ：<https://github.com/yasuka0186/asunote-nagoya>
+- タスク管理：GitHub Issues #1〜#13
+- 初期ブランチ：`main`
 
 ## 保留事項
 
-- GitHub CLIの認証を再設定後、公開リポジトリと13件のIssueを作成する。
+- なし
 
 ## 確認結果
 
