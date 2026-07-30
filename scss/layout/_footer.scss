@@ -1,0 +1,65 @@
+@use "../foundation/variables" as var;
+@use "../foundation/mixins";
+
+.site-footer {
+  padding-block: 3.5rem 1.5rem;
+  color: var.$color-white;
+  background: var.$color-primary;
+}
+
+.site-footer__grid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.site-footer__logo {
+  width: 230px;
+  padding: 0.5rem;
+  background: var.$color-white;
+  border-radius: var.$radius-button;
+}
+
+.site-footer__address {
+  margin-top: 1.5rem;
+  font-style: normal;
+}
+
+.site-footer__address a,
+.site-footer__link {
+  color: var.$color-white;
+}
+
+.site-footer__heading {
+  color: var.$color-white;
+  font-size: 1rem;
+}
+
+.site-footer__list {
+  margin-top: 0.75rem;
+  list-style: none;
+}
+
+.site-footer__item + .site-footer__item {
+  margin-top: 0.5rem;
+}
+
+.site-footer__bottom {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgb(255 255 255 / 28%);
+  font-size: 0.875rem;
+}
+
+@include mixins.tablet {
+  .site-footer__grid {
+    grid-template-columns: 1.4fr 1fr 1fr;
+  }
+
+  .site-footer__bottom {
+    grid-template-columns: 1fr auto;
+    align-items: end;
+  }
+}
+

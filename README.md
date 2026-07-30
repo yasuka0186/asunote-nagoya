@@ -6,8 +6,8 @@
 
 ## 制作状況
 
-- 完了工程：Day 3（原稿・素材）
-- 次の工程：Day 4（共通基盤）
+- 完了工程：Day 4（共通基盤）
+- 次の工程：Day 5（トップページ）
 - 公開URL：未公開
 - GitHubリポジトリ：<https://github.com/yasuka0186/asunote-nagoya>
 - 制作期間：13工程

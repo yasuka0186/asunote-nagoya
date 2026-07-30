@@ -16,8 +16,11 @@ export default [
     files: ["**/*.js"],
     languageOptions: {
       ecmaVersion: "latest",
-      sourceType: "module"
+      sourceType: "module",
+      globals: {
+        document: "readonly",
+        window: "readonly"
+      }
     }
   }
 ];
-

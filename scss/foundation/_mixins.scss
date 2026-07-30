@@ -1,0 +1,19 @@
+@use "variables" as var;
+
+@mixin tablet {
+  @media (min-width: var.$breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: var.$breakpoint-desktop) {
+    @content;
+  }
+}
+
+@mixin focus-ring {
+  outline: 3px solid var.$color-accent;
+  outline-offset: 3px;
+}
+

@@ -1,0 +1,23 @@
+@use "../foundation/variables" as var;
+@use "../foundation/mixins";
+
+.l-section {
+  padding-block: 4rem;
+
+  @include mixins.desktop {
+    padding-block: 6rem;
+  }
+}
+
+.l-section--muted {
+  background: var.$color-background;
+}
+
+.page-placeholder {
+  padding-block: 3rem 5rem;
+}
+
+.page-placeholder__text {
+  max-width: 42rem;
+}
+

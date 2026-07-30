@@ -1,0 +1,23 @@
+@use "../foundation/variables" as var;
+@use "../foundation/mixins";
+
+.page-header {
+  padding-block: 3rem;
+  background: var.$color-background;
+}
+
+.page-header__title {
+  font-size: clamp(2rem, 7vw, 3rem);
+}
+
+.page-header__lead {
+  max-width: 46rem;
+  margin-top: 1rem;
+}
+
+@include mixins.desktop {
+  .page-header {
+    padding-block: 4rem;
+  }
+}
+

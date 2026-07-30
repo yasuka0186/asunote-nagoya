@@ -1,0 +1,20 @@
+@use "../foundation/variables" as var;
+@use "../foundation/mixins";
+
+.l-container {
+  width: min(100% - 2.5rem, var.$content-width);
+  margin-inline: auto;
+
+  @include mixins.tablet {
+    width: min(100% - 4rem, var.$content-width);
+  }
+
+  @include mixins.desktop {
+    width: min(100% - 6rem, var.$content-width);
+  }
+}
+
+.l-container--narrow {
+  max-width: 800px;
+}
+

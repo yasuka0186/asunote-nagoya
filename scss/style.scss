@@ -1,2 +1,11 @@
-// 共通スタイルの実装はDay 4で開始する。
-
+@use "foundation/variables";
+@use "foundation/reset";
+@use "foundation/base";
+@use "layout/container";
+@use "layout/header";
+@use "layout/footer";
+@use "layout/section";
+@use "component/button";
+@use "component/breadcrumb";
+@use "project/page-header";
+@use "utility/utility";

@@ -1,0 +1,81 @@
+@use "variables" as var;
+@use "mixins";
+
+:root {
+  color-scheme: light;
+  font-family: var.$font-family-base;
+  font-synthesis: none;
+}
+
+html {
+  min-width: 320px;
+}
+
+body {
+  min-width: 320px;
+  color: var.$color-text;
+  background: var.$color-white;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+body.is-menu-open {
+  overflow: hidden;
+}
+
+a {
+  color: var.$color-accent-dark;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  @include mixins.focus-ring;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 0.5rem;
+  left: 0.5rem;
+  padding: 0.75rem 1rem;
+  color: var.$color-white;
+  background: var.$color-primary;
+  border-radius: var.$radius-button;
+  transform: translateY(-160%);
+  transition: transform var.$transition-base;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+main {
+  min-height: 50vh;
+}
+
+h1,
+h2,
+h3 {
+  color: var.$color-primary;
+  line-height: 1.4;
+}
+
+p + p {
+  margin-top: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto;
+    transition-duration: 0.01ms;
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+  }
+}
+

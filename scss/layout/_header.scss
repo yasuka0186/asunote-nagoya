@@ -1,0 +1,213 @@
+@use "../foundation/variables" as var;
+@use "../foundation/mixins";
+
+.site-header {
+  position: sticky;
+  z-index: 50;
+  top: 0;
+  background: rgb(255 255 255 / 96%);
+  border-bottom: 1px solid transparent;
+  transition:
+    box-shadow var.$transition-base,
+    border-color var.$transition-base;
+}
+
+.site-header.is-scrolled {
+  border-color: var.$color-border;
+  box-shadow: var.$shadow-header;
+}
+
+.site-header__inner {
+  display: flex;
+  min-height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-header__logo {
+  position: relative;
+  z-index: 2;
+  display: block;
+  flex: 0 1 220px;
+}
+
+.site-header__logo-image {
+  width: 220px;
+  height: auto;
+}
+
+.site-header__menu-button {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  place-items: center;
+  color: var.$color-primary;
+  background: var.$color-white;
+  border: 1px solid var.$color-border;
+  border-radius: var.$radius-button;
+  cursor: pointer;
+}
+
+.site-header__menu-icon,
+.site-header__menu-icon::before,
+.site-header__menu-icon::after {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: currentcolor;
+  transition: transform var.$transition-base;
+}
+
+.site-header__menu-icon {
+  position: relative;
+}
+
+.site-header__menu-icon::before,
+.site-header__menu-icon::after {
+  position: absolute;
+  left: 0;
+  content: "";
+}
+
+.site-header__menu-icon::before {
+  transform: translateY(-7px);
+}
+
+.site-header__menu-icon::after {
+  transform: translateY(7px);
+}
+
+.site-header__menu-button[aria-expanded="true"] .site-header__menu-icon {
+  background: transparent;
+}
+
+.site-header__menu-button[aria-expanded="true"] .site-header__menu-icon::before {
+  transform: rotate(45deg);
+}
+
+.site-header__menu-button[aria-expanded="true"] .site-header__menu-icon::after {
+  transform: rotate(-45deg);
+}
+
+.site-header__nav {
+  padding-block: 1rem 1.5rem;
+}
+
+.js .site-header__nav {
+  position: fixed;
+  z-index: 1;
+  inset: 72px 0 auto;
+  max-height: calc(100dvh - 72px);
+  overflow-y: auto;
+  visibility: hidden;
+  background: var.$color-white;
+  border-bottom: 1px solid var.$color-border;
+  box-shadow: var.$shadow-header;
+  opacity: 0;
+  transform: translateY(-0.75rem);
+  transition:
+    opacity var.$transition-base,
+    transform var.$transition-base,
+    visibility var.$transition-base;
+}
+
+.js .site-header__nav.is-open {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.site-header__list {
+  display: grid;
+  width: min(100% - 2.5rem, var.$content-width);
+  margin-inline: auto;
+  list-style: none;
+}
+
+.site-header__link {
+  display: block;
+  padding: 0.75rem 0;
+  color: var.$color-primary;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid var.$color-border;
+}
+
+.site-header__link[aria-current="page"] {
+  color: var.$color-accent-dark;
+}
+
+.site-header__cta {
+  width: min(100% - 2.5rem, var.$content-width);
+  margin: 1rem auto 0;
+}
+
+@include mixins.desktop {
+  .site-header__inner {
+    min-height: 88px;
+  }
+
+  .site-header__logo {
+    flex-basis: 230px;
+  }
+
+  .site-header__logo-image {
+    width: 230px;
+  }
+
+  .site-header__menu-button {
+    display: none;
+  }
+
+  .site-header__nav,
+  .js .site-header__nav {
+    position: static;
+    display: flex;
+    max-height: none;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0;
+    overflow: visible;
+    visibility: visible;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .site-header__list {
+    display: flex;
+    width: auto;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 0;
+  }
+
+  .site-header__link {
+    position: relative;
+    padding: 0.5rem 0;
+    border: 0;
+    font-size: 0.9375rem;
+  }
+
+  .site-header__link[aria-current="page"]::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: var.$color-accent-dark;
+    content: "";
+  }
+
+  .site-header__cta {
+    width: auto;
+    margin: 0;
+  }
+}
+
