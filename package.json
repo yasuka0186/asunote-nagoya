@@ -1,0 +1,36 @@
+{
+  "name": "asunote-nagoya",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "株式会社アスノテ名古屋のポートフォリオ用架空企業サイト",
+  "scripts": {
+    "build:css": "sass scss/style.scss css/style.css --style=compressed --no-source-map",
+    "watch:css": "sass scss/style.scss css/style.css --watch",
+    "lint": "npm run lint:js && npm run lint:scss",
+    "lint:js": "eslint .",
+    "lint:scss": "stylelint \"scss/**/*.scss\"",
+    "validate:html": "html-validate \"**/*.html\"",
+    "test": "vitest run --passWithNoTests",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "lucide": "^1.28.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.62.0",
+    "eslint": "^10.8.0",
+    "html-validate": "^10.17.0",
+    "http-server": "^14.1.1",
+    "jsdom": "^29.1.1",
+    "sass": "^1.102.0",
+    "stylelint": "^17.14.1",
+    "stylelint-config-standard-scss": "^17.0.0",
+    "vitest": "^4.1.10"
+  }
+}
