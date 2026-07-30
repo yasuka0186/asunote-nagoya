@@ -1,0 +1,55 @@
+@use "../foundation/variables" as var;
+@use "../foundation/mixins";
+
+.contact-cta {
+  padding-block: 4rem;
+  color: var.$color-white;
+  background: var.$color-primary;
+}
+
+.contact-cta__eyebrow {
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.contact-cta__title {
+  color: inherit;
+  font-size: clamp(1.75rem, 6vw, 2.5rem);
+}
+
+.contact-cta__text {
+  max-width: 42rem;
+  margin-top: 1rem;
+}
+
+.contact-cta__button {
+  margin-top: 2rem;
+  background: var.$color-white;
+  border-color: var.$color-white;
+  color: var.$color-accent-dark;
+}
+
+.contact-cta__button:hover {
+  color: var.$color-white;
+  background: transparent;
+}
+
+@include mixins.desktop {
+  .contact-cta {
+    padding-block: 5rem;
+  }
+
+  .contact-cta__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+  }
+
+  .contact-cta__button {
+    flex: none;
+    margin-top: 0;
+  }
+}

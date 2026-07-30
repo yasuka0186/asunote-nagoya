@@ -1,0 +1,210 @@
+@use "../foundation/variables" as var;
+@use "../foundation/mixins";
+
+.hero {
+  padding-block: 3rem 4rem;
+  background: var.$color-background;
+}
+
+.hero__title {
+  color: var.$color-primary;
+  font-size: clamp(2rem, 9vw, 3rem);
+  line-height: 1.35;
+}
+
+.hero__text {
+  max-width: 42rem;
+  margin-top: 1.5rem;
+}
+
+.hero__button {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.hero__image {
+  width: min(100%, 560px);
+  height: auto;
+  margin: 2.5rem auto 0;
+}
+
+.feature__grid,
+.service-overview__grid,
+.case-overview__grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.feature-card {
+  padding: 1.5rem;
+  border-left: 3px solid var.$color-accent;
+}
+
+.feature-card__number,
+.service-card__number {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: var.$color-accent-dark;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.feature-card__title,
+.service-card__title,
+.reason-item__title,
+.flow__title {
+  margin-bottom: 0.75rem;
+  color: var.$color-primary;
+  font-size: 1.25rem;
+}
+
+.service-card {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  padding: 1.5rem;
+  background: var.$color-white;
+  border: 1px solid var.$color-border;
+  border-radius: var.$radius-card;
+  box-shadow: var.$shadow-card;
+}
+
+.service-card__link {
+  align-self: flex-start;
+  margin-top: auto;
+  padding-top: 1.5rem;
+  color: var.$color-accent-dark;
+  font-weight: 700;
+}
+
+.reasons__list,
+.flow__list {
+  display: grid;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.reason-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  padding-block: 1.5rem;
+  border-top: 1px solid var.$color-border;
+}
+
+.reason-item__number,
+.flow__number {
+  color: var.$color-accent-dark;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.case-overview__note {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+}
+
+.flow__item {
+  position: relative;
+  padding: 1.5rem;
+  background: var.$color-background;
+  border-radius: var.$radius-card;
+}
+
+.flow__number {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.news-overview__list {
+  border-top: 1px solid var.$color-border;
+}
+
+.news-item {
+  display: grid;
+  gap: 0.5rem;
+  padding-block: 1.25rem;
+  border-bottom: 1px solid var.$color-border;
+}
+
+.news-item__date {
+  font-size: 0.875rem;
+}
+
+.news-item__category {
+  width: fit-content;
+  padding: 0.15rem 0.65rem;
+  color: var.$color-accent-dark;
+  background: var.$color-white;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.news-item__title {
+  color: var.$color-primary;
+  font-size: 1rem;
+}
+
+@include mixins.tablet {
+  .news-item {
+    grid-template-columns: 8rem 7rem 1fr;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+@include mixins.desktop {
+  .hero {
+    padding-block: 5rem;
+  }
+
+  .hero__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .hero__title {
+    font-size: 3rem;
+  }
+
+  .hero__button {
+    width: auto;
+  }
+
+  .hero__image {
+    margin-top: 0;
+  }
+
+  .feature__grid,
+  .service-overview__grid,
+  .case-overview__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .feature-card,
+  .service-card {
+    padding: 2rem;
+  }
+
+  .reasons__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .reason-item {
+    display: block;
+    padding: 2rem;
+    border-top: 3px solid var.$color-accent;
+  }
+
+  .reason-item__number {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .flow__list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
