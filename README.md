@@ -6,7 +6,8 @@
 
 ## 制作状況
 
-- 現在の工程：Day 1（要件確定・プロジェクト準備）
+- 完了工程：Day 2（ワイヤーフレーム・デザインルール）
+- 次の工程：Day 3（原稿・素材）
 - 公開URL：未公開
 - GitHubリポジトリ：<https://github.com/yasuka0186/asunote-nagoya>
 - 制作期間：13工程
@@ -55,3 +56,5 @@ npm run test:e2e
 ```
 
 詳細な要件と制作日程は [`docs/asunote-requirements-schedule.md`](docs/asunote-requirements-schedule.md) を参照してください。
+
+Day 2の設計成果物は、[`docs/design/wireframes.md`](docs/design/wireframes.md) と [`docs/design/design-system.md`](docs/design/design-system.md) にまとめています。

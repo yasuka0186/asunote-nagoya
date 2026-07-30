@@ -1,0 +1,35 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="292"
+  height="56"
+  viewBox="0 0 292 56"
+  role="img"
+  aria-labelledby="logo-title logo-description"
+>
+  <title id="logo-title">株式会社アスノテ名古屋 ロゴ案</title>
+  <desc id="logo-description">右上へ伸びる成長ラインと伴走する曲線を組み合わせたシンボル</desc>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path
+      d="M8 39c8-12 15-17 23-17 7 0 10 4 15 4 4 0 7-2 10-6"
+      stroke="#15324B"
+      stroke-width="6"
+    />
+    <path
+      d="M10 46c10-7 18-9 26-9 9 0 14-4 21-13"
+      stroke="#0B6E70"
+      stroke-width="6"
+    />
+    <path d="M47 13h12v12" stroke="#0B6E70" stroke-width="6" />
+  </g>
+  <text
+    x="76"
+    y="35"
+    fill="#15324B"
+    font-family="'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif"
+    font-size="23"
+    font-weight="700"
+    letter-spacing="0.02em"
+  >
+    アスノテ名古屋
+  </text>
+</svg>
