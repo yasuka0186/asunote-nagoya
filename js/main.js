@@ -6,8 +6,6 @@ import { initContactForm } from "./modules/contact-form.js";
 import { initFixedCta } from "./modules/fixed-cta.js";
 import { initScrollReveal } from "./modules/scroll-reveal.js";
 
-document.documentElement.classList.add("js");
-
 initHeader();
 initMobileMenu();
 initFaq();

@@ -1,7 +1,7 @@
 import { cases } from "../data/cases.js";
 import { news } from "../data/news.js";
 
-const caseMarkup = (item, pathPrefix) => {
+export const caseMarkup = (item, pathPrefix) => {
   const content = `
     <img class="case-card__image" src="${pathPrefix}${item.image}" width="${item.imageWidth}" height="${item.imageHeight}" loading="lazy" decoding="async" alt="${item.imageAlt}">
     <div class="case-card__body">
@@ -18,7 +18,7 @@ const caseMarkup = (item, pathPrefix) => {
     : `<article class="case-card">${content}</article>`;
 };
 
-const newsMarkup = (item, showSummary) => `
+export const newsMarkup = (item, showSummary) => `
   <article class="news-item${showSummary ? " news-item--detail" : ""}">
     <time class="news-item__date" datetime="${item.date}">${item.displayDate}</time>
     <span class="news-item__category">${item.category}</span>
@@ -28,11 +28,13 @@ const newsMarkup = (item, showSummary) => `
 
 export const renderContentLists = () => {
   document.querySelectorAll("[data-case-list]").forEach((list) => {
+    if (list.hasAttribute("data-rendered")) return;
     const pathPrefix = list.dataset.pathPrefix ?? "./";
     list.innerHTML = cases.map((item) => caseMarkup(item, pathPrefix)).join("");
   });
 
   document.querySelectorAll("[data-news-list]").forEach((list) => {
+    if (list.hasAttribute("data-rendered")) return;
     const showSummary = list.hasAttribute("data-show-summary");
     list.innerHTML = news.map((item) => newsMarkup(item, showSummary)).join("");
   });

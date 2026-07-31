@@ -3,6 +3,9 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { minify as minifyHtml } from "html-minifier-terser";
 import { minify as minifyJavaScript } from "terser";
+import { cases } from "../js/data/cases.js";
+import { news } from "../js/data/news.js";
+import { caseMarkup, newsMarkup } from "../js/modules/render-content-lists.js";
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const outputRoot = path.join(projectRoot, "dist");
@@ -31,6 +34,32 @@ const javascriptFiles = [
   "js/modules/scroll-reveal.js"
 ];
 
+const preRenderSharedContent = (relativePath, html) => {
+  const pathPrefix = relativePath === "index.html" ? "./" : "../";
+  const showNewsSummary = relativePath === "news/index.html";
+  let output = html;
+
+  if (relativePath === "index.html" || relativePath === "cases/index.html") {
+    output = output
+      .replace("data-case-list", "data-case-list data-rendered")
+      .replace(
+        /<noscript><p>導入事例の表示にはJavaScriptが必要です。[\s\S]*?<\/p><\/noscript>/,
+        cases.map((item) => caseMarkup(item, pathPrefix)).join("")
+      );
+  }
+
+  if (relativePath === "index.html" || relativePath === "news/index.html") {
+    output = output
+      .replace("data-news-list", "data-news-list data-rendered")
+      .replace(
+        /<noscript><p>お知らせの表示にはJavaScriptが必要です。[\s\S]*?<\/p><\/noscript>/,
+        news.map((item) => newsMarkup(item, showNewsSummary)).join("")
+      );
+  }
+
+  return output;
+};
+
 const writeOutput = async (relativePath, content) => {
   const outputPath = path.join(outputRoot, relativePath);
   await mkdir(path.dirname(outputPath), { recursive: true });
@@ -42,7 +71,8 @@ await mkdir(outputRoot, { recursive: true });
 
 for (const relativePath of htmlFiles) {
   const source = await readFile(path.join(projectRoot, relativePath), "utf8");
-  const output = await minifyHtml(source, {
+  const preRenderedSource = preRenderSharedContent(relativePath, source);
+  const output = await minifyHtml(preRenderedSource, {
     collapseWhitespace: true,
     minifyCSS: true,
     minifyJS: true,

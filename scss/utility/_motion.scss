@@ -1,14 +1,10 @@
 .is-reveal-ready .reveal {
   opacity: 0;
-  transform: translateY(16px);
-  transition:
-    opacity 420ms ease,
-    transform 420ms ease;
+  transition: opacity 420ms ease;
 }
 
 .is-reveal-ready .reveal.is-revealed {
   opacity: 1;
-  transform: translateY(0);
 }
 
 @media (prefers-reduced-motion: reduce) {

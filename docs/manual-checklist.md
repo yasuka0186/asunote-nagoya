@@ -18,6 +18,10 @@
 | 動きの抑制 | `prefers-reduced-motion` | 成功 | フェード移動を行わず本文を表示 |
 | 架空サイト表記 | 全9ページ | 成功 | Playwrightで共通表示を確認 |
 | フォーム非送信 | 入力から完了まで | 成功 | POST通信なし、同一URLで完了を確認 |
+| コンソール | 全9ページ | 成功 | 3ブラウザエンジンのPlaywrightでエラーなし |
+| 内部リンク・アセット | 全9ページ | 成功 | ローカル参照を自動巡回し、全件成功 |
+| 画像属性 | 全9ページ | 成功 | alt、width、heightを自動確認 |
+| Lighthouse | 公開用dist・モバイル | 成功 | Performance、Accessibility、Best Practices、SEOが各100、CLS 0 |
 
 ## Day 10の確認条件
 

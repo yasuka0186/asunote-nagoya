@@ -7,6 +7,7 @@
   "scripts": {
     "build:css": "sass scss/style.scss css/style.css --style=compressed --no-source-map",
     "build:production": "npm run build:css && node scripts/build-production.js",
+    "serve:production": "http-server dist -a 127.0.0.1 -p 4173 -c31536000",
     "audit:lighthouse": "node -e \"require('node:fs').mkdirSync('reports',{recursive:true})\" && lighthouse http://127.0.0.1:4173/ --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=reports/lighthouse-day11.json --chrome-flags=--headless",
     "watch:css": "sass scss/style.scss css/style.css --watch",
     "lint": "npm run lint:js && npm run lint:scss",
