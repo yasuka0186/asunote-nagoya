@@ -1,0 +1,54 @@
+@use "../foundation/variables" as var;
+
+.fixed-cta {
+  position: fixed;
+  z-index: 40;
+  right: 1rem;
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  left: 1rem;
+  display: flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  visibility: hidden;
+  color: var.$color-white;
+  background: var.$color-accent-dark;
+  border: 2px solid var.$color-white;
+  border-radius: var.$radius-button;
+  box-shadow: 0 8px 24px rgb(21 50 75 / 24%);
+  opacity: 0;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transform: translateY(calc(100% + 2rem));
+  transition:
+    opacity var.$transition-base,
+    transform var.$transition-base,
+    visibility var.$transition-base;
+}
+
+.fixed-cta:hover {
+  color: var.$color-white;
+  background: var.$color-primary;
+  text-decoration: none;
+}
+
+.fixed-cta.is-visible {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (min-width: var.$breakpoint-tablet) {
+  .fixed-cta {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fixed-cta {
+    transform: none;
+    transition: none;
+  }
+}

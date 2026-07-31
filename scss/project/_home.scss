@@ -67,6 +67,15 @@
   border: 1px solid var.$color-border;
   border-radius: var.$radius-card;
   box-shadow: var.$shadow-card;
+  transition:
+    border-color var.$transition-base,
+    transform var.$transition-base;
+}
+
+.service-card:hover,
+.service-card:focus-within {
+  border-color: var.$color-accent;
+  transform: translateY(-3px);
 }
 
 .service-card__link {
