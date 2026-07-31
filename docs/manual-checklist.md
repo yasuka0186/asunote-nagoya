@@ -21,7 +21,10 @@
 | コンソール | 全9ページ | 成功 | 3ブラウザエンジンのPlaywrightでエラーなし |
 | 内部リンク・アセット | 全9ページ | 成功 | ローカル参照を自動巡回し、全件成功 |
 | 画像属性 | 全9ページ | 成功 | alt、width、heightを自動確認 |
-| Lighthouse | 公開用dist・モバイル | 成功 | Performance、Accessibility、Best Practices、SEOが各100、CLS 0 |
+| Lighthouse | 公開URL・モバイル | 成功 | Performance 99、Accessibility 100、Best Practices 100、SEO 100、CLS 0 |
+| GitHub Pages | 公開URLの全9ページ | 成功 | HTTP応答、main、canonical、OGP、画像・CSS・JSのベースパスを自動確認 |
+| SEO公開物 | robots.txt・sitemap.xml | 成功 | 実URLからHTTP 200で取得でき、公開URLの記載と一致 |
+| 第三者アクセス | 公開サイト・公開リポジトリ | 成功 | 未認証相当のHTTPアクセスで双方200、リポジトリのPUBLIC設定を確認 |
 
 ## Day 10の確認条件
 
@@ -31,3 +34,14 @@
 - 拡大表示：1280pxの表示領域を200％にした場合に相当する640 CSS pxでリフローを確認
 - ブラウザ：Playwright Chromium、Firefox、WebKit
 - 制約：この開発環境では実機SafariとMicrosoft Edgeを起動していないため、同系統エンジンによる確認として記録する
+
+## Day 13の公開確認
+
+- 確認日：2026年8月1日
+- 公開URL：<https://yasuka0186.github.io/asunote-nagoya/>
+- リポジトリ：<https://github.com/yasuka0186/asunote-nagoya>
+- 全9ページ、`robots.txt`、`sitemap.xml`：公開確認成功
+- canonical、OGP、sitemap：公開URLとの一致を確認
+- Pagesベースパス：リンク、画像、CSS、JavaScriptの参照成功
+- PC・スマートフォン：公開URLからスクリーンショットを取得し目視確認
+- 重大・高優先度の未解決不具合：0件

@@ -17,6 +17,7 @@
     "test": "vitest run --passWithNoTests",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
+    "capture:screenshots": "node scripts/capture-screenshots.js",
     "verify:public": "node scripts/verify-public-site.js"
   },
   "engines": {
