@@ -92,3 +92,4 @@ await cp(path.join(projectRoot, "assets"), path.join(outputRoot, "assets"), { re
 await cp(path.join(projectRoot, "css"), path.join(outputRoot, "css"), { recursive: true });
 await cp(path.join(projectRoot, "robots.txt"), path.join(outputRoot, "robots.txt"));
 await cp(path.join(projectRoot, "sitemap.xml"), path.join(outputRoot, "sitemap.xml"));
+await writeOutput(".nojekyll", "");
