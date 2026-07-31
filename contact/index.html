@@ -28,7 +28,42 @@
     <main id="main-content">
       <nav class="breadcrumb" aria-label="パンくずリスト"><ol class="breadcrumb__list l-container"><li class="breadcrumb__item"><a href="../">トップ</a></li><li class="breadcrumb__item"><span class="breadcrumb__current" aria-current="page">お問い合わせ</span></li></ol></nav>
       <header class="page-header"><div class="l-container"><h1 class="page-header__title">お問い合わせ</h1><p class="page-header__lead">業務の進め方やIT活用についてのお悩みをお聞かせください。</p></div></header>
-      <section class="page-placeholder"><div class="l-container"><h2>デモフォームについて</h2><p class="page-placeholder__text">自主制作のデモサイトのため、入力内容は実際には送信されません。個人情報や実在する企業の情報は入力しないでください。</p></div></section>
+      <div class="l-section contact-page"><div class="l-container l-container--narrow">
+        <aside class="demo-notice"><h2 class="demo-notice__title">デモフォームについて</h2><p>自主制作のため、入力内容は実際には送信されません。個人情報や実在する企業の情報は入力しないでください。</p></aside>
+
+        <ol class="form-progress" data-form-progress>
+          <li class="form-progress__item is-current" data-progress-step="input" aria-current="step"><span>1</span>入力</li>
+          <li class="form-progress__item" data-progress-step="confirm"><span>2</span>確認</li>
+          <li class="form-progress__item" data-progress-step="complete"><span>3</span>完了</li>
+        </ol>
+
+        <section class="form-panel" data-form-panel="input" aria-labelledby="contact-form-title">
+          <div class="section-heading"><p class="section-heading__eyebrow">入力</p><h2 class="section-heading__title" id="contact-form-title" tabindex="-1">お問い合わせ内容を入力してください</h2><p class="section-heading__lead"><span class="form-label__status form-label__status--required">必須</span>は入力が必要な項目です。</p></div>
+          <div class="error-summary" role="alert" aria-live="assertive" data-error-summary hidden></div>
+          <form class="contact-form" data-contact-form novalidate>
+            <div class="form-field"><label class="form-label" for="company">会社名 <span class="form-label__status">任意</span></label><input class="form-control" type="text" id="company" name="company" maxlength="100" autocomplete="organization" aria-describedby="company-help company-error"><p class="form-help" id="company-help">100文字以内で入力してください。</p><p class="form-error" id="company-error" data-error-for="company" hidden></p></div>
+            <div class="form-field"><label class="form-label" for="name">氏名 <span class="form-label__status form-label__status--required">必須</span></label><input class="form-control" type="text" id="name" name="name" maxlength="50" autocomplete="name" aria-describedby="name-help name-error" required><p class="form-help" id="name-help">50文字以内で入力してください。</p><p class="form-error" id="name-error" data-error-for="name" hidden></p></div>
+            <div class="form-field"><label class="form-label" for="email">メールアドレス <span class="form-label__status form-label__status--required">必須</span></label><input class="form-control" type="email" id="email" name="email" maxlength="254" inputmode="email" autocomplete="email" aria-describedby="email-help email-error" required><p class="form-help" id="email-help">例：name@example.com</p><p class="form-error" id="email-error" data-error-for="email" hidden></p></div>
+            <div class="form-field"><label class="form-label" for="phone">電話番号 <span class="form-label__status">任意</span></label><input class="form-control" type="tel" id="phone" name="phone" maxlength="20" inputmode="tel" autocomplete="tel" aria-describedby="phone-help phone-error"><p class="form-help" id="phone-help">数字、ハイフン、括弧など20文字以内で入力してください。</p><p class="form-error" id="phone-error" data-error-for="phone" hidden></p></div>
+            <div class="form-field"><label class="form-label" for="service">相談したいサービス <span class="form-label__status form-label__status--required">必須</span></label><select class="form-control" id="service" name="service" aria-describedby="service-error" required><option value="">選択してください</option><option>Excel・紙業務のデジタル化</option><option>クラウドサービス導入支援</option><option>IT定期相談・運用サポート</option><option>どれを選べばよいかわからない</option></select><p class="form-error" id="service-error" data-error-for="service" hidden></p></div>
+            <div class="form-field"><label class="form-label" for="message">相談内容 <span class="form-label__status form-label__status--required">必須</span></label><textarea class="form-control form-control--textarea" id="message" name="message" maxlength="2000" rows="8" aria-describedby="message-help message-error" required></textarea><p class="form-help" id="message-help">2,000文字以内で入力してください。</p><p class="form-error" id="message-error" data-error-for="message" hidden></p></div>
+            <fieldset class="form-field form-fieldset"><legend class="form-label">希望する連絡方法 <span class="form-label__status">任意</span></legend><div class="choice-group"><label class="choice"><input type="radio" name="contactMethod" value="メール"> メール</label><label class="choice"><input type="radio" name="contactMethod" value="電話"> 電話</label><label class="choice"><input type="radio" name="contactMethod" value="指定なし"> 指定なし</label></div></fieldset>
+            <div class="form-field form-field--consent"><label class="choice choice--consent"><input type="checkbox" id="consent" name="consent" aria-describedby="consent-help consent-error" required> <span><a href="../privacy/" target="_blank" rel="noopener noreferrer">個人情報の取り扱い</a>に同意する <span class="form-label__status form-label__status--required">必須</span></span></label><p class="form-help" id="consent-help">リンクは新しいタブで開きます。</p><p class="form-error" id="consent-error" data-error-for="consent" hidden></p></div>
+            <button class="button form-actions__primary" type="submit">入力内容を確認する</button>
+          </form>
+        </section>
+
+        <section class="form-panel" data-form-panel="confirm" aria-labelledby="confirm-title" hidden>
+          <div class="section-heading"><p class="section-heading__eyebrow">確認</p><h2 class="section-heading__title" id="confirm-title" tabindex="-1">入力内容をご確認ください</h2><p class="section-heading__lead">内容を確認し、修正する場合は入力画面へ戻ってください。</p></div>
+          <dl class="confirm-list"><div><dt>会社名</dt><dd data-confirm="company"></dd></div><div><dt>氏名</dt><dd data-confirm="name"></dd></div><div><dt>メールアドレス</dt><dd data-confirm="email"></dd></div><div><dt>電話番号</dt><dd data-confirm="phone"></dd></div><div><dt>相談したいサービス</dt><dd data-confirm="service"></dd></div><div><dt>相談内容</dt><dd data-confirm="message"></dd></div><div><dt>希望する連絡方法</dt><dd data-confirm="contactMethod"></dd></div><div><dt>個人情報の取り扱い</dt><dd data-confirm="consent"></dd></div></dl>
+          <p class="confirm-notice">この操作はデモです。ボタンを押しても入力内容は外部へ送信・保存されません。</p>
+          <div class="form-actions"><button class="button button--secondary" type="button" data-form-back>入力画面へ戻る</button><button class="button" type="button" data-form-complete>送信する（デモ）</button></div>
+        </section>
+
+        <section class="form-panel complete-panel" data-form-panel="complete" aria-labelledby="complete-title" aria-live="polite" hidden>
+          <p class="complete-panel__mark" aria-hidden="true">✓</p><h2 class="complete-panel__title" id="complete-title" tabindex="-1">お問い合わせありがとうございます</h2><p>入力内容は実際には送信されていません。こちらはポートフォリオ用のデモフォームです。</p><a class="button complete-panel__button" href="../">トップページへ戻る</a>
+        </section>
+      </div></div>
     </main>
     <footer class="site-footer">
       <div class="l-container"><div class="site-footer__grid">
