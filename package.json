@@ -6,6 +6,8 @@
   "description": "株式会社アスノテ名古屋のポートフォリオ用架空企業サイト",
   "scripts": {
     "build:css": "sass scss/style.scss css/style.css --style=compressed --no-source-map",
+    "build:production": "npm run build:css && node scripts/build-production.js",
+    "audit:lighthouse": "node -e \"require('node:fs').mkdirSync('reports',{recursive:true})\" && lighthouse http://127.0.0.1:4173/ --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=reports/lighthouse-day11.json --chrome-flags=--headless",
     "watch:css": "sass scss/style.scss css/style.css --watch",
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint .",
@@ -25,12 +27,15 @@
     "@eslint/js": "^10.0.1",
     "@playwright/test": "^1.62.0",
     "eslint": "^10.8.0",
+    "html-minifier-terser": "^7.2.0",
     "html-validate": "^10.17.0",
     "http-server": "^14.1.1",
     "jsdom": "^29.1.1",
+    "lighthouse": "^12.6.1",
     "sass": "^1.102.0",
     "stylelint": "^17.14.1",
     "stylelint-config-standard-scss": "^17.0.0",
+    "terser": "^5.49.0",
     "vitest": "^4.1.10"
   }
 }

@@ -25,6 +25,7 @@
 .hero__image {
   width: min(100%, 560px);
   height: auto;
+  aspect-ratio: 640 / 520;
   margin: 2.5rem auto 0;
 }
 

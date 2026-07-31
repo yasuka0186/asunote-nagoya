@@ -6,8 +6,8 @@
 
 ## 制作状況
 
-- 完了工程：Day 10（レスポンシブ・手動確認）
-- 次の工程：Day 11（SEO・性能）
+- 完了工程：Day 11（SEO・性能）
+- 次の工程：Day 12（テスト・修正）
 - 公開URL：未公開
 - GitHubリポジトリ：<https://github.com/yasuka0186/asunote-nagoya>
 - 制作期間：13工程
@@ -49,11 +49,17 @@ npm install
 ```bash
 npm run watch:css
 npm run build:css
+npm run build:production
 npm run lint
 npm run validate:html
 npm test
 npm run test:e2e
+npm run audit:lighthouse
 ```
+
+`build:production`は、編集用ソースを維持したまま圧縮済み公開ファイルを`dist/`へ生成します。`audit:lighthouse`の実行時は、別のターミナルで`npx http-server . -a 127.0.0.1 -p 4173 -c-1`を起動してください。
+
+Day 11のLighthouse初回結果はPerformance 82、Accessibility 100、Best Practices 100、SEO 100です。PerformanceはJavaScriptによる共通データの初期描画に伴うレイアウト変化などをDay 12で改善します。詳細は[`docs/day-11-report.md`](docs/day-11-report.md)を参照してください。
 
 詳細な要件と制作日程は [`docs/asunote-requirements-schedule.md`](docs/asunote-requirements-schedule.md) を参照してください。
 

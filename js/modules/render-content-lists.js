@@ -3,7 +3,7 @@ import { news } from "../data/news.js";
 
 const caseMarkup = (item, pathPrefix) => {
   const content = `
-    <img class="case-card__image" src="${pathPrefix}${item.image}" width="640" height="420" alt="${item.imageAlt}">
+    <img class="case-card__image" src="${pathPrefix}${item.image}" width="${item.imageWidth}" height="${item.imageHeight}" loading="lazy" decoding="async" alt="${item.imageAlt}">
     <div class="case-card__body">
       <p class="case-card__meta"><span>${item.industry}</span><span>${item.service}</span></p>
       <p class="case-card__company">${item.company}</p>

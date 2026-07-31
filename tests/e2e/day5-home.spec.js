@@ -26,9 +26,9 @@ test.describe("Day 5 home page", () => {
     const buttons = page.locator("[data-faq-button]");
 
     await buttons.nth(0).click();
+    await expect(buttons.nth(0)).toHaveAttribute("aria-expanded", "true");
     await buttons.nth(1).click();
 
-    await expect(buttons.nth(0)).toHaveAttribute("aria-expanded", "true");
     await expect(buttons.nth(1)).toHaveAttribute("aria-expanded", "true");
     await expect(page.locator("#faq-answer-1")).toBeVisible();
     await expect(page.locator("#faq-answer-2")).toBeVisible();
