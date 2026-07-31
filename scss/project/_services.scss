@@ -1,0 +1,190 @@
+@use "../foundation/variables" as var;
+@use "../foundation/mixins";
+
+.service-nav {
+  padding-block: 2rem;
+}
+
+.service-nav__list {
+  display: grid;
+  gap: 0.75rem;
+  list-style: none;
+}
+
+.service-nav__link {
+  display: flex;
+  min-height: 64px;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  color: var.$color-primary;
+  border: 1px solid var.$color-border;
+  border-radius: var.$radius-button;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.service-nav__link span {
+  color: var.$color-accent-dark;
+}
+
+.service-nav__link:hover {
+  background: var.$color-background;
+  text-decoration: none;
+}
+
+.service-detail {
+  scroll-margin-top: 72px;
+}
+
+.service-detail__heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.service-detail__number {
+  color: var.$color-accent-dark;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.service-detail__label {
+  color: var.$color-accent-dark;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.service-detail__title {
+  font-size: clamp(1.65rem, 6vw, 2.25rem);
+}
+
+.service-detail__lead {
+  max-width: 52rem;
+  margin-top: 1.5rem;
+}
+
+.service-detail__grid {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.detail-panel {
+  padding: 1.5rem;
+  background: var.$color-white;
+  border: 1px solid var.$color-border;
+  border-radius: var.$radius-card;
+}
+
+.service-detail:not(.l-section--muted) .detail-panel {
+  background: var.$color-background;
+}
+
+.detail-panel__title {
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var.$color-accent;
+  font-size: 1.25rem;
+}
+
+.check-list {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 1rem;
+  list-style: none;
+}
+
+.check-list li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.check-list li::before {
+  position: absolute;
+  top: 0.65em;
+  left: 0;
+  width: 0.7rem;
+  height: 0.35rem;
+  border-bottom: 2px solid var.$color-accent-dark;
+  border-left: 2px solid var.$color-accent-dark;
+  content: "";
+  transform: rotate(-45deg);
+}
+
+.price-box {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  padding: 1.5rem;
+  background: var.$color-primary;
+  border-radius: var.$radius-card;
+  color: var.$color-white;
+}
+
+.price-box__label {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.price-box__price {
+  margin-top: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.price-box__note {
+  margin-top: 0;
+}
+
+.price-box--accent {
+  background: var.$color-accent-dark;
+}
+
+.notes__list {
+  display: grid;
+  gap: 1rem;
+  list-style: none;
+}
+
+.notes__list li {
+  padding: 1rem 1rem 1rem 1.25rem;
+  background: var.$color-background;
+  border-left: 3px solid var.$color-accent;
+}
+
+@include mixins.tablet {
+  .service-nav__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .service-detail__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .price-box {
+    grid-template-columns: minmax(12rem, 0.7fr) 1.3fr;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+@include mixins.desktop {
+  .service-detail {
+    scroll-margin-top: 88px;
+  }
+
+  .service-detail__heading {
+    gap: 1.5rem;
+  }
+
+  .service-detail__number {
+    font-size: 2.5rem;
+  }
+
+  .detail-panel,
+  .price-box {
+    padding: 2rem;
+  }
+}

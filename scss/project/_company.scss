@@ -1,0 +1,124 @@
+@use "../foundation/variables" as var;
+@use "../foundation/mixins";
+
+.company-intro__grid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.company-intro__image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var.$radius-card;
+}
+
+.company-intro__caption {
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  line-height: 1.7;
+}
+
+.philosophy__title {
+  font-size: clamp(1.55rem, 5.5vw, 2.25rem);
+}
+
+.philosophy__text {
+  text-align: center;
+}
+
+.message__body {
+  padding-left: 1.25rem;
+  border-left: 3px solid var.$color-accent;
+}
+
+.message__signature {
+  margin-top: 2rem;
+  text-align: right;
+}
+
+.message__signature strong {
+  margin-left: 0.5rem;
+  color: var.$color-primary;
+  font-size: 1.25rem;
+}
+
+.company-profile__notice {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var.$color-white;
+  border: 1px solid var.$color-border;
+  border-radius: var.$radius-button;
+  font-weight: 700;
+}
+
+.company-profile__list {
+  border-top: 1px solid var.$color-border;
+}
+
+.company-profile__row {
+  padding-block: 1rem;
+  border-bottom: 1px solid var.$color-border;
+}
+
+.company-profile__row dt {
+  color: var.$color-primary;
+  font-weight: 700;
+}
+
+.company-profile__row dd {
+  margin-top: 0.35rem;
+  overflow-wrap: anywhere;
+}
+
+.area__box {
+  padding: 1.5rem;
+  background: var.$color-background;
+  border-radius: var.$radius-card;
+}
+
+.area__title {
+  font-size: clamp(1.5rem, 6vw, 2rem);
+}
+
+.area__box > p {
+  margin-top: 1rem;
+}
+
+@include mixins.tablet {
+  .company-profile__row {
+    display: grid;
+    grid-template-columns: 11rem 1fr;
+    gap: 1.5rem;
+    padding: 1.25rem;
+  }
+
+  .company-profile__row dd {
+    margin-top: 0;
+  }
+
+  .area__box {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .area__box > p {
+    margin-top: 0;
+  }
+}
+
+@include mixins.desktop {
+  .company-intro__grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .message__body {
+    padding-left: 2rem;
+  }
+}
